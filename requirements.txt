@@ -1,0 +1,5 @@
+oss2>=2.13.1
+pytz>=2020.1
+requests>=2.24.0
+httpx>=0.16.1
+pymysql>=1.0.2
