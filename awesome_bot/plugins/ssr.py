@@ -5,6 +5,8 @@ from nonebot.adapters import Bot, Event
 import requests
 import json
 
+from awesome_bot.config.config import ALKAID_CAPTURE_SUBSCRIBE_SSR_API
+
 ssr = on_command("ssr", rule=to_me(), priority=5)
 
 
@@ -16,7 +18,8 @@ async def handle_first_receive(bot: Bot, event: Event, state: T_State):
     await ssr.finish(message=replay)
     # await ssr.finish(message = at_ + " " + replay)
 
+
 async def get_ssr():
-    str = requests.get('').text
+    str = requests.get(ALKAID_CAPTURE_SUBSCRIBE_SSR_API).text
     data = json.loads(str)
     return data['subscribe']

@@ -6,7 +6,7 @@
 
 测试机器人QQ851722457
 
-有啥好的插件想法请发issue 0.0
+有啥好的插件想法/独家定制请发issue 0.0
 
 ## 插件说明
 
@@ -86,11 +86,69 @@ query { qq | 学号 } {}
 ### setu
 On Developing...
 
+说明：瑟图
+
 ### helpme
 On Developing...
+
+说明：帮我
+
+命令：
+```
+帮我骂人 @someone
+```
+
+食用指北：添加`脏话样本.txt`
+
+### souti
+On Developing
+
+说明：搜题
+
+命令：
+```
+搜题 { 题目 }
+```
+
+食用指北：
+
+
+### tiangou
+On Developing
+
+说明：来舔我
+
+命令：
+
+食用指北：
+
+
+### weather
+On Developing
+
+说明：天气预报
+
+命令：
+
+食用指北：
+
+### mrwh
+
+On Developing
+
+说明：每日问好，用到的插件<a href="https://github.com/nonebot/plugin-apscheduler">https://github.com/nonebot/plugin-apscheduler</a>
+
+命令：
+
+食用指北：
+
 
 ## TODO
 
 - [ ] 重构
 - [ ] 配置文件
 - [ ] 异常处理
+
+## Change log
+### 20210114 v0.0.1
+- 基础框架和功能
