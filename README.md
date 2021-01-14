@@ -11,7 +11,6 @@
 ## 插件说明
 
 ### menu
-On Developing...
 
 说明：插件汇总，菜单
 
@@ -167,7 +166,7 @@ On Developing
 ## Change log
 
 ### 20210114 v0.0.2
-- 添加`mrwh`和`setu`功能
+- 添加`menu,mrwh`和`setu`功能
 
 ### 20210114 v0.0.1
 - 基础框架和功能
