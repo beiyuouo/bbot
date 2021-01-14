@@ -84,9 +84,10 @@ query { qq | 学号 } {}
 说明：自动同意好友申请和加群邀请
 
 ### setu
-On Developing...
 
-说明：瑟图
+说明：给俺来张瑟图！
+
+命令：`{ setu | 瑟图 | 色图 | 来张瑟图 | 来张色图 }`
 
 ### helpme
 On Developing...
@@ -101,6 +102,7 @@ On Developing...
 食用指北：添加`脏话样本.txt`
 
 ### souti
+
 On Developing
 
 说明：搜题
@@ -114,6 +116,7 @@ On Developing
 
 
 ### tiangou
+
 On Developing
 
 说明：来舔我
@@ -124,6 +127,7 @@ On Developing
 
 
 ### weather
+
 On Developing
 
 说明：天气预报
@@ -134,13 +138,17 @@ On Developing
 
 ### mrwh
 
-On Developing
-
 说明：每日问好，用到的插件<a href="https://github.com/nonebot/plugin-apscheduler">https://github.com/nonebot/plugin-apscheduler</a>
 
-命令：
+命令：无
 
 食用指北：
+修改`awesome_bot/config/config.py`文件中
+```
+MRWH_GROUP = [''] # 需要通知的群列表
+MRWH_SPECIAL_USER = [''] # 需要特殊提醒的群成员
+TIANQI_KEY = '' #Tianqi API Key
+```
 
 
 ### yiqing
@@ -157,5 +165,9 @@ On Developing
 - [ ] 命令的模糊匹配
 
 ## Change log
+
+### 20210114 v0.0.2
+- 添加`mrwh`和`setu`功能
+
 ### 20210114 v0.0.1
 - 基础框架和功能
