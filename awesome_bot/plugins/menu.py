@@ -29,6 +29,7 @@ bullshit/狗屁不通生成器+主题：狗屁不通！
 zhihu/知乎：知乎日报
 帮我骂人+@小可爱：不要轻易骂小可爱嗷~
 ai：价值一个亿的AI核心代码
+hhsh: 能不能好好说话？
 搜题：（开发中...）
 疫情：（开发中...）
 开源地址：https://github.com/beiyuouo/plugins-for-nonebot2

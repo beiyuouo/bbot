@@ -1,5 +1,38 @@
 ![plugins-for-nonebot2](https://socialify.git.ci/beiyuouo/plugins-for-nonebot2/image?font=Source%20Code%20Pro&forks=1&issues=1&language=1&logo=https%3A%2F%2Favatars0.githubusercontent.com%2Fu%2F44976445%3Fs%3D460%26u%3D182d335f502ab38522bde613717bd77aa1f6f766%26v%3D4&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
 
+<!-- MarkdownTOC -->
+
+- [Plugins for nonebot2](#plugins-for-nonebot2)
+- [插件说明](#%E6%8F%92%E4%BB%B6%E8%AF%B4%E6%98%8E)
+    - [menu](#menu)
+    - [base](#base)
+    - [rp](#rp)
+    - [ssr/v2ray](#ssrv2ray)
+    - [v2raycs](#v2raycs)
+    - [twqd](#twqd)
+    - [ai](#ai)
+    - [ai_100000000](#ai_100000000)
+    - [bullshit](#bullshit)
+    - [zhihu](#zhihu)
+    - [twqh](#twqh)
+    - [auto_agree](#auto_agree)
+    - [setu](#setu)
+    - [helpme](#helpme)
+    - [souti](#souti)
+    - [tiangou](#tiangou)
+    - [weather](#weather)
+    - [mrwh](#mrwh)
+    - [yiqing](#yiqing)
+    - [hhsh](#hhsh)
+- [TODO](#todo)
+- [Change log](#change-log)
+    - [20210114 v0.0.4](#20210114-v004)
+    - [20210114 v0.0.3](#20210114-v003)
+    - [20210114 v0.0.2](#20210114-v002)
+    - [20210113 v0.0.1](#20210113-v001)
+
+<!-- /MarkdownTOC -->
+
 ## Plugins for nonebot2
 
 自用插件（确信）
@@ -156,6 +189,12 @@ On Developing
 
 说明：疫情查询
 
+### hhsh
+
+说明：能不能好好说话？
+
+命令：`hhsh { text text }`
+
 ## TODO
 
 - [ ] 重构
@@ -165,8 +204,14 @@ On Developing
 
 ## Change log
 
+### 20210114 v0.0.4
+- 添加`hhsh`和`menu`功能
+
+### 20210114 v0.0.3
+- 仓库重命名为bbot
+
 ### 20210114 v0.0.2
 - 添加`menu,mrwh`和`setu`功能
 
-### 20210114 v0.0.1
+### 20210113 v0.0.1
 - 基础框架和功能
