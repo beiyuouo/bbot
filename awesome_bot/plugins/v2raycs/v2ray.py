@@ -5,7 +5,7 @@ from nonebot.adapters import Bot, Event
 import requests
 import json
 
-from awesome_bot.config.config import *
+from .apis import *
 
 v2ray = on_command("v2ray", rule=to_me(), priority=5)
 

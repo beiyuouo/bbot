@@ -5,7 +5,7 @@ from nonebot.adapters import Bot, Event
 import requests
 import json
 
-from awesome_bot.config.config import ALKAID_CAPTURE_SUBSCRIBE_SSR_API
+from .apis import *
 
 ssr = on_command("ssr", rule=to_me(), priority=5)
 

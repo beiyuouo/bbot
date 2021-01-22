@@ -11,7 +11,7 @@ from nonebot.typing import T_State
 from nonebot.adapters import Bot, Event
 from nonebot.adapters.cqhttp import Bot, unescape, MessageEvent, Message, MessageSegment
 from nonebot.log import logger
-import requests
+import httpx
 
 twqh = on_command('twqh', aliases=set(['土味情话', '情话', '土味', '来句土味', '来句情话',
                                        '来句土味情话', '你爱我吗', '爱我吗']), rule=to_me())
@@ -26,4 +26,6 @@ async def handle(bot: Bot, event: Event, state: T_State):
 
 async def get_lovelive():
     url = 'https://api.lovelive.tools/api/SweetNothings'
-    return requests.get(url).text
+    async with httpx.AsyncClient() as client:
+        resp = await client.get(url).text
+        return resp

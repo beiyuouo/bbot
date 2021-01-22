@@ -16,14 +16,15 @@ async def handle_first_receive(bot: Bot, event: Event, state: T_State):
     replay = await get_randint()
     msg = at_ + " " + replay
     msg = Message(msg)
-    
+
     # def _unescape(message: Message, segment: MessageSegment):
     #     if segment.is_text():
     #         return message.append(unescape(str(segment)))
     #     return message.append(segment)
 
     # msg = reduce(_unescape, msg, Message())
-    await rp.finish(message = msg)
+    await rp.finish(message=msg)
+
 
 async def get_randint():
     # print('called!')
