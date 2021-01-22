@@ -3,13 +3,9 @@
 # Date  : 2021/1/12 17:10
 # Description:
 
-ALKAID_HOST = ''
+import nonebot
 
-ALKAID_CAPTURE_SUBSCRIBE_SSR_API = ALKAID_HOST + ""
-ALKAID_CAPTURE_SUBSCRIBE_V2RAY_API = ALKAID_HOST + ""
-ALKAID_VERSION_MANAGER_API = ALKAID_HOST + ""
-ALKAID_GET_SUBS_NUM_API = ALKAID_HOST + ""
-
-MRWH_GROUP = ['']
-MRWH_SPECIAL_USER = ['']
-TIANQI_KEY = ''
+global_config = nonebot.get_driver().config
+config = nonebot.Config(**global_config.dict())
+print(config)
+# print(config.gocq_path)

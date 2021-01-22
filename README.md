@@ -3,6 +3,13 @@
 <!-- MarkdownTOC -->
 
 - [Plugins for nonebot2](#plugins-for-nonebot2)
+- [Changelog](#changelog)
+    - [20210122 v0.1.0](#20210122-v010)
+    - [20210116 v0.0.4](#20210116-v004)
+    - [20210114 v0.0.3](#20210114-v003)
+    - [20210114 v0.0.2](#20210114-v002)
+    - [20210113 v0.0.1](#20210113-v001)
+- [TODO](#todo)
 - [插件说明](#%E6%8F%92%E4%BB%B6%E8%AF%B4%E6%98%8E)
     - [menu](#menu)
     - [base](#base)
@@ -24,12 +31,6 @@
     - [mrwh](#mrwh)
     - [yiqing](#yiqing)
     - [hhsh](#hhsh)
-- [TODO](#todo)
-- [Change log](#change-log)
-    - [20210114 v0.0.4](#20210114-v004)
-    - [20210114 v0.0.3](#20210114-v003)
-    - [20210114 v0.0.2](#20210114-v002)
-    - [20210113 v0.0.1](#20210113-v001)
 
 <!-- /MarkdownTOC -->
 
@@ -40,6 +41,30 @@
 测试机器人QQ851722457
 
 有啥好的插件想法/独家定制请发issue 0.0
+
+## Changelog
+
+### 20210122 v0.1.0
+- 代码重构，更新配置方式，更易于移植和配置
+
+### 20210116 v0.0.4
+- 添加`hhsh`和`menu`功能
+
+### 20210114 v0.0.3
+- 仓库重命名为bbot
+
+### 20210114 v0.0.2
+- 添加`menu,mrwh`和`setu`功能
+
+### 20210113 v0.0.1
+- 基础框架和功能
+
+## TODO
+
+- [x] 重构
+- [x] 配置文件，易部署修改
+- [x] 异常处理
+- [ ] 命令的模糊匹配
 
 ## 插件说明
 
@@ -64,7 +89,7 @@
 
 命令：`{ ssr | v2ray }`
 
-食用指北：修改`awesome/config/config`下配置为ssr/v2ray/v2raycs的api接口
+食用指北：修改`.env.dev`内配置ssr/v2ray/v2raycs的api接口
 
 ### v2raycs
 说明：获取ssr/v2ray余量信息，API配合<a href="https://github.com/QIN2DIM/V2RayCloudSpider">V2RayCloudSpider</a>食用
@@ -89,7 +114,7 @@ query { qq | 学号 } {}
 
 命令：`""`，正常对话即可
 
-食用指北：修改目录下`config`内的API_KEY等
+食用指北：修改`.env.dev`内的BAIDU_API_KEY等
 
 ### ai_100000000
 说明：价值一个亿的AI核心代码，dddd
@@ -175,7 +200,7 @@ On Developing
 命令：无
 
 食用指北：
-修改`awesome_bot/config/config.py`文件中
+修改`.env.dev`文件中
 ```
 MRWH_GROUP = [''] # 需要通知的群列表
 MRWH_SPECIAL_USER = [''] # 需要特殊提醒的群成员
@@ -195,23 +220,3 @@ On Developing
 
 命令：`hhsh { text text }`
 
-## TODO
-
-- [ ] 重构
-- [ ] 配置文件，易部署修改
-- [ ] 异常处理
-- [ ] 命令的模糊匹配
-
-## Change log
-
-### 20210114 v0.0.4
-- 添加`hhsh`和`menu`功能
-
-### 20210114 v0.0.3
-- 仓库重命名为bbot
-
-### 20210114 v0.0.2
-- 添加`menu,mrwh`和`setu`功能
-
-### 20210113 v0.0.1
-- 基础框架和功能

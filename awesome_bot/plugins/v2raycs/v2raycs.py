@@ -11,7 +11,7 @@ import requests
 import json
 from nonebot.log import logger
 
-from awesome_bot.config.config import *
+from .apis import *
 
 v2raycs = on_command("v2raycs", rule=to_me(), priority=5)
 

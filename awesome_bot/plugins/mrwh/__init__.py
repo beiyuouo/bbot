@@ -38,7 +38,7 @@ async def _():
     bot = getBot()
     async with aiohttp.request(
             'GET',
-            f'http://api.tianapi.com/txapi/wanan/index?key={TIANQI_KEY}'
+            f'http://api.tianapi.com/txapi/wanan/index?key={config.tianqi_key}'
     ) as resp:
         res = await resp.json()
         logger.debug(res)
@@ -60,7 +60,7 @@ async def _():
     logger.debug(groups)
     for g in groups:
         logger.debug(g)
-        if not g in MRWH_GROUP:
+        if not g in config.mrwh_group:
             continue
         await asyncio.sleep(0.5)
         try:
@@ -69,7 +69,7 @@ async def _():
             logger.debug(group_member_list)
             for member in group_member_list:
                 logger.debug(member)
-                if not str(member['user_id']) in MRWH_SPECIAL_USER:
+                if not str(member['user_id']) in config.mrwh_special_user:
                     continue
                 at_ = f"[CQ:at,qq={member['user_id']}]"
                 msgg = at_ + qh
@@ -85,7 +85,7 @@ async def _():
     bot = getBot()
     async with aiohttp.request(
             'GET',
-            f'http://api.tianapi.com/txapi/zaoan/index?key={TIANQI_KEY}'
+            f'http://api.tianapi.com/txapi/zaoan/index?key={config.tianqi_key}'
     ) as resp:
         res = await resp.json()
         logger.debug(res)
@@ -107,7 +107,7 @@ async def _():
     logger.debug(groups)
     for g in groups:
         logger.debug(g)
-        if not g in MRWH_GROUP:
+        if not g in config.mrwh_group:
             continue
         await asyncio.sleep(0.5)
         try:
@@ -116,7 +116,7 @@ async def _():
             logger.debug(group_member_list)
             for member in group_member_list:
                 logger.debug(member)
-                if not str(member['user_id']) in MRWH_SPECIAL_USER:
+                if not str(member['user_id']) in config.mrwh_special_user:
                     continue
                 at_ = f"[CQ:at,qq={member['user_id']}]"
                 msgg = at_ + qh

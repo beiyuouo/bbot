@@ -1,7 +1,5 @@
 from .generator import 狗屁不通
 from nonebot import on_command
-from nonebot.matcher import Matcher
-from nonebot.permission import SUPERUSER
 from nonebot.rule import to_me
 from nonebot.typing import T_State
 from nonebot.adapters import Bot, Event

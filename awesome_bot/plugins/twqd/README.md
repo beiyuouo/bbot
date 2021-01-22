@@ -1,1 +1,0 @@
-该插件详见 <a href="https://github.com/beiyuouo/hnu-temp-report-bot">https://github.com/beiyuouo/hnu-temp-report-bot</a>
