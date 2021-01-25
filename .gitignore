@@ -57,3 +57,4 @@ awesome_bot/plugins/helpme/脏话样本.txt
 .env.dev.bp
 api.txt
 test/
+.env.dev
