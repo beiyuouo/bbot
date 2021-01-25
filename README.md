@@ -1,10 +1,13 @@
 ![plugins-for-nonebot2](https://socialify.git.ci/beiyuouo/plugins-for-nonebot2/image?font=Source%20Code%20Pro&forks=1&issues=1&language=1&logo=https%3A%2F%2Favatars0.githubusercontent.com%2Fu%2F44976445%3Fs%3D460%26u%3D182d335f502ab38522bde613717bd77aa1f6f766%26v%3D4&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
 
+<details>
+    <summary>Click to open TOC</summary>
+
 <!-- MarkdownTOC -->
 
 - [Plugins for nonebot2](#plugins-for-nonebot2)
 - [Changelog](#changelog)
-    - [20210122 v0.1.0](#20210122-v010)
+    - [20210122 v0.1.0](#重要更新)
     - [20210116 v0.0.4](#20210116-v004)
     - [20210114 v0.0.3](#20210114-v003)
     - [20210114 v0.0.2](#20210114-v002)
@@ -34,17 +37,20 @@
 
 <!-- /MarkdownTOC -->
 
+</details>
+
+
 ## Plugins for nonebot2
 
-自用插件（确信）
-
-测试机器人QQ851722457
+自用插件（确信），测试机器人QQ851722457
 
 有啥好的插件想法/独家定制请发issue 0.0
 
+项目分为两个分支，`main`为稳定版本的分支，`dev`为正在开发的内容
+
 ## Changelog
 
-### 20210122 v0.1.0
+### 20210122 v0.1.0 [重要更新]
 - 代码重构，更新配置方式，更易于移植和配置
 
 ### 20210116 v0.0.4
@@ -97,7 +103,7 @@
 命令：`v2raycs`
 
 ### twqd
-说明：HainanUniversity体温签到接口，详见<a href="https://github.com/beiyuouo/hnu-temp-report-bot">hnu-temp-report-bot</a>
+说明：HainanUniversity体温签到接口
 
 命令：
 ```
@@ -108,6 +114,27 @@ add { 学号 } # 以发送人QQ为键值
 add { qq } { 学号 }
 query { qq | 学号 } {}
 ```
+
+食用指北：后端使用MySQL存储QQ-学号映射，API由<a href="https://github.com/QIN2DIM/CampusDailyAutoSign">ALKAID</a>提供
+需要修改`.env.dev`的字段
+```
+ALKAID_HOST = "" # CHANGE ALKAIDAPI HOST
+QQMAP_HOST = "" # CHANGE 数据库HOST
+QQMAP_USERNAME = "" # CHANGE 数据库用户名
+QQMAP_PASSWORD = "" # CHANGE 数据库密码
+
+PLUGINS_PATH = "awesome_bot/plugins/hnu-temp-report-bot" # CHANGE 插件目录
+GOCQ_PATH = "" # CHANGE GO-CQHTTP运行目录
+EXCEPTION_ADMIN = [{"type": "group", "id": ""}] # type: group or private, id: qq for group 
+# 如果需要输出异常进行监控，可以利用这个修改成QQ群号或是QQ号即可
+
+AccessKeyId = "" # CHANGE OSS key
+AccessKeySecret = "" # CHANGE OSS secret
+bucket_name = "" # CHANGE OSS bucket
+oss2.Bucket(auth, "", bucket_name) # CHANGE OSS host
+```
+
+ps: 对于HainanUnverisity的同学，可以将bot(851722457)拉到群中进行签到，bot会自动同意加群和好友请求. 如需twqdall，请联系superadmin(729320011,471591513)，进行信息录入
 
 ### ai
 说明：百度UNIX2，图灵机器人接口

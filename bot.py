@@ -11,11 +11,12 @@ driver.register_adapter("cqhttp", CQHTTPBot)
 nonebot.load_plugins("awesome_bot/plugins")
 # nonebot.load_plugin('nonebot_plugin_picsearcher')
 
-nonebot.load_plugin("nonebot_plugin_test")
+from awesome_bot.config.config import config
+
+if config.test == 'true':
+    nonebot.load_plugin("nonebot_plugin_test")
 
 app = nonebot.get_asgi()
-
-import nonebot_plugin_test.view
 
 if __name__ == "__main__":
     nonebot.run()
