@@ -7,6 +7,7 @@
 
 - [Plugins for nonebot2](#plugins-for-nonebot2)
 - [Changelog](#changelog)
+    - [20210125 v0.1.1-v0.1.2](#20210125-v011-v012)
     - [20210122 v0.1.0](#重要更新)
     - [20210116 v0.0.4](#20210116-v004)
     - [20210114 v0.0.3](#20210114-v003)
@@ -40,6 +41,7 @@
 </details>
 
 
+
 ## Plugins for nonebot2
 
 自用插件（确信），测试机器人QQ851722457
@@ -49,6 +51,9 @@
 项目分为两个分支，`main`为稳定版本的分支，`dev`为正在开发的内容
 
 ## Changelog
+### 20210125 v0.1.1-v0.1.2
+- 添加疫情查询插件
+- 添加搜题插件
 
 ### 20210122 v0.1.0 [重要更新]
 - 代码重构，更新配置方式，更易于移植和配置
@@ -187,8 +192,6 @@ On Developing...
 
 ### souti
 
-On Developing
-
 说明：搜题
 
 命令：
@@ -237,9 +240,9 @@ TIANQI_KEY = '' #Tianqi API Key
 
 ### yiqing
 
-On Developing
-
 说明：疫情查询
+
+命令：`疫情 { 地点 }`
 
 ### hhsh
 

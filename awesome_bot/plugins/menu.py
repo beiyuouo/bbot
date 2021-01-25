@@ -31,8 +31,8 @@ zhihu/知乎：知乎日报
 帮我骂人：不要轻易骂小可爱~
 ai：价值一个亿的AI核心代码
 hhsh: 能不能好好说话？
-搜题：（开发中...）
-疫情：（开发中...）
+搜题：20w题库
+疫情：全球各地疫情查询
 开源地址：https://github.com/beiyuouo/bbot
 """
     at_ = f"[CQ:at,qq={event.get_user_id()}]"
