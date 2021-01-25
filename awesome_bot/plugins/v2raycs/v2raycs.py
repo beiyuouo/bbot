@@ -35,7 +35,7 @@ v2ray: {}"""
     async with httpx.AsyncClient() as client:
         resp = await client.get(ALKAID_VERSION_MANAGER_API)
         logger.debug(resp.json())
-        _version = resp.json()['latestVersion']
+        _version = resp.json()['version-server']
         resp = await client.get(ALKAID_GET_SUBS_NUM_API)
         logger.debug(resp.json())
         resp = resp.json()
