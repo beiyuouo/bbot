@@ -31,7 +31,7 @@ def getBot() -> Bot:
 
 
 # @scheduler.scheduled_job('cron', hour='*', minute='*')
-@scheduler.scheduled_job('cron', hour='0', minute='*')
+@scheduler.scheduled_job('cron', hour='0', minute='0')
 async def _():
     tz = pytz.timezone('Asia/Shanghai')
     nowtime = datetime.datetime.now(tz).strftime("%H:%M")
@@ -78,7 +78,7 @@ async def _():
             logger.error(f'Error: {type(e)}')
 
 
-@scheduler.scheduled_job('cron', hour='9', minute='*')
+@scheduler.scheduled_job('cron', hour='9', minute='0')
 async def _():
     tz = pytz.timezone('Asia/Shanghai')
     nowtime = datetime.datetime.now(tz).strftime("%H:%M")
