@@ -6,6 +6,20 @@
 import httpx
 
 
+def deal_none_int(data):
+    if data is None:
+        return 0
+    else:
+        return int(data)
+
+
+def deal_none_str(data: str):
+    if data is None:
+        return ""
+    else:
+        return str(data)
+
+
 class YiQing(object):
     url = 'http://c.m.163.com/ug/api/wuhan/app/data/list-total'
     updateTime = ""
@@ -28,17 +42,25 @@ class YiQing(object):
         chinaTotalToday = chinaTotal['today']
         chinaTotalTotal = chinaTotal['total']
         chinaTotalExtdata = chinaTotal['extData']
-        self.china_str = f"国内疫情：截止至{data['lastUpdateTime']}\n" \
-                         f"新增确诊{chinaTotalToday['confirm'] - chinaTotalToday['heal'] - chinaTotalToday['dead']}例，" \
-                         f"新增治愈{chinaTotalToday['heal']}例，" \
-                         f"新增死亡{chinaTotalToday['dead']}例，" \
-                         f"新增无症状{chinaTotalExtdata['incrNoSymptom']}例\n" \
-                         f"现有确诊{chinaTotalTotal['confirm'] - chinaTotalTotal['heal'] - chinaTotalTotal['dead']}例，" \
-                         f"境外输入{chinaTotalTotal['input']}例，" \
-                         f"无症状{chinaTotalExtdata['noSymptom']}例\n" \
-                         f"累计确诊{chinaTotalTotal['confirm']}例，" \
-                         f"累计治愈{chinaTotalTotal['heal']}例，" \
-                         f"累计死亡{chinaTotalTotal['dead']}例\n\n"
+        if not chinaTotalExtdata.get('noSymptom'):
+            chinaTotalExtdata['noSymptom'] = 0
+
+        if not chinaTotalExtdata.get('incrNoSymptom'):
+            chinaTotalExtdata['incrNoSymptom'] = 0
+
+        # print(deal_none(data['lastUpdateTime']))
+        # print(f"{deal_none(data['lastUpdateTime'])}")
+        self.china_str = f"国内疫情：截止至{deal_none_str(data['lastUpdateTime'])}\n" \
+                         f"新增确诊{deal_none_int(chinaTotalToday['confirm']) - deal_none_int(chinaTotalToday['heal']) - deal_none_int(chinaTotalToday['dead'])}例，" \
+                         f"新增治愈{deal_none_int(chinaTotalToday['heal'])}例，" \
+                         f"新增死亡{deal_none_int(chinaTotalToday['dead'])}例，" \
+                         f"新增无症状{deal_none_int(chinaTotalExtdata['incrNoSymptom'])}例\n" \
+                         f"现有确诊{deal_none_int(chinaTotalTotal['confirm']) - deal_none_int(chinaTotalTotal['heal']) - deal_none_int(chinaTotalTotal['dead'])}例，" \
+                         f"境外输入{deal_none_int(chinaTotalTotal['input'])}例，" \
+                         f"无症状{deal_none_int(chinaTotalExtdata['noSymptom'])}例\n" \
+                         f"累计确诊{deal_none_int(chinaTotalTotal['confirm'])}例，" \
+                         f"累计治愈{deal_none_int(chinaTotalTotal['heal'])}例，" \
+                         f"累计死亡{deal_none_int(chinaTotalTotal['dead'])}例\n\n"
         self.updateTime = data['lastUpdateTime']
         return self.china_str
 
@@ -55,30 +77,30 @@ class YiQing(object):
         for area in data['areaTree']:
             # print(area)
             # print('-'*20)
-            todayConfirm += int(area['today']['confirm'] if area['today']['confirm'] is not None else 0)
-            todayHeal += int(area['today']['heal'] if area['today']['heal'] is not None else 0)
-            todayDead += int(area['today']['dead'] if area['today']['dead'] is not None else 0)
+            todayConfirm += deal_none_int(area['today']['confirm'])
+            todayHeal += deal_none_int(area['today']['heal'])
+            todayDead += deal_none_int(area['today']['dead'])
 
-            totalConfirm += int(area['total']['confirm'] if area['total']['confirm'] is not None else 0)
-            totalHeal += int(area['total']['heal'] if area['total']['heal'] is not None else 0)
-            totalDead += int(area['total']['dead'] if area['total']['dead'] is not None else 0)
+            totalConfirm += deal_none_int(area['total']['confirm'])
+            totalHeal += deal_none_int(area['total']['heal'])
+            totalDead += deal_none_int(area['total']['dead'])
 
             existConfirm += totalConfirm - totalHeal - totalDead
 
-        self.total_str = f"国际疫情：截止至{data['overseaLastUpdateTime']}\n" \
+        self.total_str = f"国际疫情：截止至{deal_none_str(data['overseaLastUpdateTime'])}\n" \
                          f"新增确诊{todayConfirm}例，新增治愈{todayHeal}例，新增死亡{todayDead}例\n" \
                          f"现存确诊{existConfirm}例，累计确诊{totalConfirm}例，累计死亡{totalDead}例"
         self.overseaUpdateTime = data['overseaLastUpdateTime']
         return self.total_str
 
     def calc_sum(self, data: dict):
-        todayConfirm = int(data['today']['confirm'] if data['today']['confirm'] is not None else 0)
-        todayHeal = int(data['today']['heal'] if data['today']['heal'] is not None else 0)
-        todayDead = int(data['today']['dead'] if data['today']['dead'] is not None else 0)
+        todayConfirm = deal_none_int(data['today']['confirm'])
+        todayHeal = deal_none_int(data['today']['heal'])
+        todayDead = deal_none_int(data['today']['dead'])
 
-        totalConfirm = int(data['total']['confirm'] if data['total']['confirm'] is not None else 0)
-        totalHeal = int(data['total']['heal'] if data['total']['heal'] is not None else 0)
-        totalDead = int(data['total']['dead'] if data['total']['dead'] is not None else 0)
+        totalConfirm = deal_none_int(data['total']['confirm'])
+        totalHeal = deal_none_int(data['total']['heal'])
+        totalDead = deal_none_int(data['total']['dead'])
 
         existConfirm = totalConfirm - totalHeal - totalDead
         return todayConfirm, todayHeal, todayDead, existConfirm, totalConfirm, totalHeal, totalDead
@@ -122,7 +144,7 @@ class YiQing(object):
                     break
         if not flag:
             raise Exception("Data Not Found!")
-        res = f"{city}疫情：截止至{data['lastUpdateTime']}\n" \
+        res = f"{city}疫情：截止至{deal_none_str(data['lastUpdateTime'])}\n" \
               f"新增确诊{todayConfirm}例，新增治愈{todayHeal}例，新增死亡{todayDead}例\n" \
               f"现存确诊{existConfirm}例，累计确诊{totalConfirm}例，累计死亡{totalDead}例"
 
@@ -132,6 +154,7 @@ class YiQing(object):
     async def get_sum(self):
         json = await self.get_json()
         data = json['data']
+        # print(data)
         self.merge_str = await self.get_china(data) + await self.get_total(data)
         return self.merge_str
 

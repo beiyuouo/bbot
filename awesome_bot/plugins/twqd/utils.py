@@ -77,7 +77,7 @@ async def tempReportEvent(at_: str, stu_num: str, matcher: Matcher):
             logger.error(NULL_PROMPT)
             if SEND_LOG:
                 matcher.send(Message(NULL_PROMPT))
-            return
+            raise JSONDecodeError
 
         logger.debug(f'已获得json: {json}')
 
