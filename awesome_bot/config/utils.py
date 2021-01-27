@@ -7,10 +7,12 @@ from nonebot.adapters import Bot
 from nonebot.log import logger
 from .config import *
 
-EXCEPTION_ADMIN = config.EXCEPTION_ADMIN
+EXCEPTION_ADMIN = config.exception_admin
 
 
 async def exception_log(bot: Bot, msg: str):
+    print(f'EXCEPTION_ADMIN: {EXCEPTION_ADMIN}')
+    logger.debug(msg)
     for p in EXCEPTION_ADMIN:
         if p['type'] == 'group':
             await bot.call_api('send_group_msg', group_id=p['id'], message=msg)
