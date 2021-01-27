@@ -5,7 +5,7 @@
 
 from awesome_bot.config.config import config
 
-ALKAID_HOST = config.alkaid_host
+ALKAID_HOST = config.alkaid_twqd_host
 
 ALKAID_TWQD_API = ALKAID_HOST + '/cpds/api/stu_twqd'
 ALKAID_TWQD_PLUS_API = ALKAID_HOST + '/cpds/api/stu_twqd2'
