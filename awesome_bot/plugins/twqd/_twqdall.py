@@ -63,7 +63,13 @@ async def handle(bot: Bot, event: Event, state: T_State):
 
             # await twqdall.send(Message(at_ + TWQDALL_RUNNING_PROMPT + f'{stu_num}'))
             await twqdall.send(Message(at_ + TWQDALL_RUNNING_PROMPT))
-            await tempReportEvent(at_, stu_num, twqdall)
+            try:
+                await tempReportEvent(at_, stu_num, twqdall)
+            except Exception as e:
+                msg = f"Exception: {Exception}\n"
+                msg += f"str(e): {str(e)}\nrepr(e): {repr(e)}\n"
+                msg += f"traceback.format_exc(): {traceback.format_exc()}"
+                await exception_log(bot, msg)
 
         db.close()
         cursor.close()
