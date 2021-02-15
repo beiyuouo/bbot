@@ -7,6 +7,7 @@
 
 - [Plugins for nonebot2](#plugins-for-nonebot2)
 - [Changelog](#changelog)
+    - [20210216 v0.1.3](#20210216-v013)
     - [20210125 v0.1.1-v0.1.2](#20210125-v011-v012)
     - [20210122 v0.1.0](#重要更新)
     - [20210116 v0.0.4](#20210116-v004)
@@ -35,6 +36,7 @@
     - [mrwh](#mrwh)
     - [yiqing](#yiqing)
     - [hhsh](#hhsh)
+    - [esport](#esport)
 
 <!-- /MarkdownTOC -->
 
@@ -51,6 +53,13 @@
 项目分为两个分支，`main`为稳定版本的分支，`dev`为正在开发的内容
 
 ## Changelog
+
+### 20210216 v0.1.3
+- 添加电竞查询插件
+
+<details>
+    <summary>Click to see more</summary>
+
 ### 20210125 v0.1.1-v0.1.2
 - 添加疫情查询插件
 - 添加搜题插件
@@ -70,6 +79,8 @@
 ### 20210113 v0.0.1
 - 基础框架和功能
 
+</details>
+
 ## TODO
 
 - [x] 重构
@@ -78,6 +89,9 @@
 - [ ] 命令的模糊匹配
 
 ## 插件说明
+
+<details>
+    <summary>Click to see more</summary>
 
 ### menu
 
@@ -250,3 +264,17 @@ TIANQI_KEY = '' #Tianqi API Key
 
 命令：`hhsh { text text }`
 
+
+### esport
+
+On developing.
+
+说明：查询近日赛程
+
+命令：`赛程`, `esport`
+
+参考：<a href="https://github.com/ChangxingJiang/CxSpider">link</a>
+
+依赖：`crawlertool, Python3.8`
+
+</details>
