@@ -3,5 +3,5 @@
 # Date  : 2021/2/16 00:45
 # Description:
 
-from ._notice import *
-from ._query import *
+from awesome_bot.plugins.esport._query import *
+from awesome_bot.plugins.esport._notice import *

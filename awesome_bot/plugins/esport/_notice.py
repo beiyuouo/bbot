@@ -19,7 +19,7 @@ from awesome_bot.config.config import *
 
 from nonebot import require
 
-from ._query import query
+from awesome_bot.plugins.esport._query import query
 
 scheduler = require("nonebot_plugin_apscheduler").scheduler
 
