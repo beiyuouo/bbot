@@ -16,6 +16,7 @@ from nonebot.log import logger
 import re
 
 
+
 def query(day_delta):
     msg = ""
     try:
