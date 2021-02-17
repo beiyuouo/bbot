@@ -18,7 +18,7 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from awesome_bot.config.config import *
 
 from nonebot import require
-from awesome_bot.plugins.esport._query import query
+from awesome_bot.plugins.esports._query import query
 
 
 scheduler = require("nonebot_plugin_apscheduler").scheduler

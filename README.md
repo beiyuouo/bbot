@@ -36,7 +36,7 @@
     - [mrwh](#mrwh)
     - [yiqing](#yiqing)
     - [hhsh](#hhsh)
-    - [esport](#esport)
+    - [esports](#esports)
 
 <!-- /MarkdownTOC -->
 
@@ -265,13 +265,13 @@ TIANQI_KEY = '' #Tianqi API Key
 命令：`hhsh { text text }`
 
 
-### esport
+### esports
 
 On developing.
 
 说明：查询近日赛程
 
-命令：`赛程`, `esport`
+命令：`赛程`, `esports`
 
 参考：<a href="https://github.com/ChangxingJiang/CxSpider">link</a>
 
