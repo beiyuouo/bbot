@@ -6,7 +6,7 @@ import datetime
 
 from nonebot.log import logger
 from awesome_bot.config.config import *
-from awesome_bot.plugins.esport.spiderWanplusLolDateList import SpiderWanplusLolDateList
+from awesome_bot.plugins.esports.spiderWanplusLolDateList import SpiderWanplusLolDateList
 from nonebot import on_command
 from nonebot.adapters.cqhttp import Message
 from nonebot.rule import to_me
@@ -14,7 +14,6 @@ from nonebot.typing import T_State
 from nonebot.adapters import Bot, Event
 from nonebot.log import logger
 import re
-
 
 
 def query(day_delta):
@@ -41,10 +40,10 @@ def query(day_delta):
     return msg
 
 
-esport = on_command("赛程", aliases=set(["esport"]), priority=1, rule=to_me())
+esports = on_command("赛程", aliases=set(["esports"]), priority=1, rule=to_me())
 
 
-@esport.handle()
+@esports.handle()
 async def handle(bot: Bot, event: Event, state: T_State):
     args = str(event.get_message()).strip()
     if args:
@@ -55,7 +54,7 @@ async def handle(bot: Bot, event: Event, state: T_State):
         logger.debug("None")
 
 
-@esport.got("date", prompt="日期")
+@esports.got("date", prompt="日期")
 async def handle_event(bot: Bot, event: Event, state: T_State):
     args = str(state["date"])
     msg = ""
@@ -87,4 +86,4 @@ async def handle_event(bot: Bot, event: Event, state: T_State):
         msg = f"{query_day.strftime('%Y%m%d')}赛程：\n" + query(day_delta)
 
     logger.debug(msg)
-    await esport.finish(msg)
+    await esports.finish(msg)
