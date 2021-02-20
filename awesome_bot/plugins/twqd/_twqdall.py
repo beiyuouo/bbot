@@ -2,6 +2,7 @@
 # Github: https://github.com/beiyuouo
 # Date  : 2021/1/22 13:02
 # Description:
+import asyncio
 import re
 import traceback
 
@@ -70,6 +71,8 @@ async def handle(bot: Bot, event: Event, state: T_State):
                 msg += f"str(e): {str(e)}\nrepr(e): {repr(e)}\n"
                 msg += f"traceback.format_exc(): {traceback.format_exc()}"
                 await exception_log(bot, msg)
+
+            await asyncio.sleep(1)
 
         db.close()
         cursor.close()
