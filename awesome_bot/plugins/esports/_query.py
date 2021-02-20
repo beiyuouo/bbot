@@ -73,13 +73,13 @@ async def handle_event(bot: Bot, event: Event, state: T_State):
         if len(args) == 4:
             query_day = datetime.datetime.strptime(year + args, "%Y%m%d")
             logger.debug(query_day)
-            day_delta = (query_day - datetime.datetime.today()).days
+            day_delta = (query_day.date() - datetime.datetime.now().date()).days
             logger.debug(day_delta)
             day_delta = int(day_delta)
         else:
             query_day = datetime.datetime.strptime(args, "%Y%m%d")
             logger.debug(query_day)
-            day_delta = (query_day - datetime.datetime.today()).days
+            day_delta = (query_day.date() - datetime.datetime.now().date()).days
             logger.debug(day_delta)
             day_delta = int(day_delta)
 
