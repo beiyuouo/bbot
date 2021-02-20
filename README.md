@@ -54,11 +54,14 @@
 
 ## Changelog
 
-### 20210216 v0.1.3
-- 添加电竞查询插件
+### 20210220 v0.1.4
+- 添加`love`插件
 
 <details>
     <summary>Click to see more</summary>
+
+### 20210216 v0.1.3
+- 添加电竞查询插件
 
 ### 20210125 v0.1.1-v0.1.2
 - 添加疫情查询插件
@@ -271,7 +274,7 @@ On developing.
 
 说明：查询近日赛程
 
-命令：`赛程`, `esports`
+命令：`{ [lol, LOL, csgo, CSGO] [date] }`
 
 参考：<a href="https://github.com/ChangxingJiang/CxSpider">link</a>
 
