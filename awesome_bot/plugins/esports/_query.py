@@ -6,6 +6,7 @@ import datetime
 
 from nonebot.log import logger
 from awesome_bot.config.config import *
+from awesome_bot.plugins.esports.spiderHltvCsgoMatchList import SpiderHltvCsgoMatchList
 from awesome_bot.plugins.esports.spiderWanplusLolDateList import SpiderWanplusLolDateList
 from nonebot import on_command
 from nonebot.adapters.cqhttp import Message
@@ -16,7 +17,7 @@ from nonebot.log import logger
 import re
 
 
-def query(day_delta):
+def lol_query(day_delta):
     msg = ""
     try:
         result = SpiderWanplusLolDateList().running(
@@ -40,50 +41,18 @@ def query(day_delta):
     return msg
 
 
-esports = on_command("赛程", aliases=set(["esports"]), priority=1, rule=to_me())
-
-
-@esports.handle()
-async def handle(bot: Bot, event: Event, state: T_State):
-    args = str(event.get_message()).strip()
-    if args:
-        state["date"] = args
-        logger.debug(args)
-    else:
-        state["date"] = "0"
-        logger.debug("None")
-
-
-@esports.got("date", prompt="日期")
-async def handle_event(bot: Bot, event: Event, state: T_State):
-    args = str(state["date"])
+def csgo_query(day_delta):
     msg = ""
+    try:
+        result = SpiderHltvCsgoMatchList().running(
+            start_date=datetime.datetime.today() + datetime.timedelta(days=day_delta),  # 抓取开始日期
+            end_date=datetime.datetime.today() + datetime.timedelta(days=day_delta)  # 抓取结束日期
+        )
+        if len(result) == 0:
+            return "无"
+        for c in result:
+            msg += f"{c['Team 1']} vs {c['Team 2']}, Map: {c['Map']}, Event: {c['Event']}"
+    except Exception as e:
+        logger.error(f'Error: {type(e)}')
 
-    if re.match(r'^[0-9]$', args):
-        logger.debug('called')
-        day_delta = int(args)
-        date = (datetime.datetime.today() + datetime.timedelta(days=day_delta)).strftime("%Y%m%d")
-        msg += f"{date}赛程：\n" + query(day_delta)
-
-    elif re.match(r'^[0-9]{2,8}$', args):
-        logger.debug(f'args: {args}')
-        year = str(datetime.datetime.today().year)
-        query_day = ""
-
-        if len(args) == 4:
-            query_day = datetime.datetime.strptime(year + args, "%Y%m%d")
-            logger.debug(query_day)
-            day_delta = (query_day.date() - datetime.datetime.now().date()).days
-            logger.debug(day_delta)
-            day_delta = int(day_delta)
-        else:
-            query_day = datetime.datetime.strptime(args, "%Y%m%d")
-            logger.debug(query_day)
-            day_delta = (query_day.date() - datetime.datetime.now().date()).days
-            logger.debug(day_delta)
-            day_delta = int(day_delta)
-
-        msg = f"{query_day.strftime('%Y%m%d')}赛程：\n" + query(day_delta)
-
-    logger.debug(msg)
-    await esports.finish(msg)
+    return msg

@@ -17,7 +17,7 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from awesome_bot.config.config import *
 
 from nonebot import require
-from awesome_bot.plugins.esports._query import query
+from awesome_bot.plugins.esports._query import lol_query
 
 
 scheduler = require("nonebot_plugin_apscheduler").scheduler
@@ -37,7 +37,7 @@ def getBot() -> Bot:
 async def _():
     bot = getBot()
     msg = "今日赛程：\n"
-    msg += query(0)
+    msg += lol_query(0)
 
     groups = await bot.call_api('get_group_list')
     groups = [str(g['group_id']) for g in groups]

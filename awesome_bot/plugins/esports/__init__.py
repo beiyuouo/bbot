@@ -5,3 +5,5 @@
 
 from awesome_bot.plugins.esports._query import *
 from awesome_bot.plugins.esports._notice import *
+from awesome_bot.plugins.esports._lol import *
+from awesome_bot.plugins.esports._csgo import *
