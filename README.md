@@ -57,7 +57,8 @@
 ## Changelog
 
 ### 20210726 v0.2.0
-因为V2RayCS并不适用于所有用户群体，后续将取消本仓库对V2RayCS的维护，请移步![V2RayCloudSpiderBot](https://github.com/beiyuouo/V2RayCloudSpiderBot)
+
+因为V2RayCS并不适用于所有用户群体，后续将取消本仓库对V2RayCS的维护，请移步[V2RayCloudSpiderBot](https://github.com/beiyuouo/V2RayCloudSpiderBot)
 
 ### 20210220 v0.1.4
 - 添加`love`插件
