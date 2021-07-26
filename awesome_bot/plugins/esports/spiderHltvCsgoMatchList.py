@@ -41,7 +41,7 @@ class SpiderHltvCsgoMatchList(tool.abc.SingleSpider):
             print("error")
             return result
 
-        # 格式化日期，方便比较
+        # 格式化日期
         end_date_str = end_date.strftime("%Y-%m-%d")
         start_date_str = start_date.strftime("%Y-%m-%d")
 

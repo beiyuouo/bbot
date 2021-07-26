@@ -7,6 +7,8 @@
 
 - [Plugins for nonebot2](#plugins-for-nonebot2)
 - [Changelog](#changelog)
+    - [20210726 v0.2.0](#20210726-v020)
+    - [20210220 v0.1.4](#20210220-v014)
     - [20210216 v0.1.3](#20210216-v013)
     - [20210125 v0.1.1-v0.1.2](#20210125-v011-v012)
     - [20210122 v0.1.0](#重要更新)
@@ -53,6 +55,9 @@
 项目分为两个分支，`main`为稳定版本的分支，`dev`为正在开发的内容
 
 ## Changelog
+
+### 20210726 v0.2.0
+因为V2RayCS并不适用于所有用户群体，后续将取消本仓库对V2RayCS的维护，请移步![V2RayCloudSpiderBot](https://github.com/beiyuouo/V2RayCloudSpiderBot)
 
 ### 20210220 v0.1.4
 - 添加`love`插件

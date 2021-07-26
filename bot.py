@@ -13,8 +13,7 @@ nonebot.load_plugins("awesome_bot/plugins")
 
 from awesome_bot.config.config import config
 
-if config.test:
-    nonebot.load_plugin("nonebot_plugin_test")
+nonebot.load_plugin("nonebot_plugin_test")
 
 app = nonebot.get_asgi()
 
