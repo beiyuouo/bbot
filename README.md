@@ -45,6 +45,7 @@
 </details>
 
 
+**应该是不会在维护了，请移步[bbot-ng](https://github.com/beiyuouo/bbot-ng)使用容器化部署，快速搭建**
 
 ## Plugins for nonebot2
 
